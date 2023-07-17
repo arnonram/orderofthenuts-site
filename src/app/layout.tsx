@@ -23,7 +23,7 @@ export default function RootLayout({
     <header>
       <div className="text-center bg-slate-800 p-8 my-6 rounded-md">
         <Link href="/">
-          <h1 className="text-3xl font-bold text-white">Order of the Nuts</h1>
+          <h1 className="text-5xl font-bold text-white">Order of the Nuts</h1>
         </Link>
         <p className="text-slate-300">
           Welcome to the home of the Order of the Nuts
@@ -41,8 +41,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
         <div className="mx-auto max-w-4xl px-6">
+          <Navbar />
           {header}
           {children}
           {footer}

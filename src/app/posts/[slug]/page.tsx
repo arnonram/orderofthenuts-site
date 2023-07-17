@@ -2,6 +2,7 @@ import fs from "fs";
 import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import { getPostMetadata } from "@/app/components/getPostsMetadata";
+import Image from "next/image";
 
 export default function PostPage(props: any) {
   const slug = props.params.slug;
@@ -13,6 +14,13 @@ export default function PostPage(props: any) {
         {post.data.title}
       </h1>
       <p className="text-slate-400 text-center">{post.data.date}</p>
+      <Image
+        className="mx-auto"
+        src={post.data.image}
+        width={500}
+        height={500}
+        alt={`image-${slug}`}
+      />
       <article className="prose lg:prose-xl">
         <Markdown>{post.content}</Markdown>
       </article>
